@@ -1,0 +1,12 @@
+﻿global using System;
+global using System.Collections.Generic;
+global using System.Linq;
+global using System.Text;
+global using System.Threading.Tasks;
+global using SimpleLoginUI.Controls;
+global using SimpleLoginUI.Views.Dashboard;
+global using SimpleLoginUI.Views.Startup;
+global using SimpleLoginUI.Models;
+global using Newtonsoft.Json;
+global using Microsoft.Toolkit.Mvvm.ComponentModel;
+global using Microsoft.Toolkit.Mvvm.Input;

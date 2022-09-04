@@ -1,15 +1,4 @@
-﻿using Newtonsoft.Json;
-using SimpleLoginUI.Controls;
-using SimpleLoginUI.Models;
-using SimpleLoginUI.Views.Dashboard;
-using SimpleLoginUI.Views.Startup;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SimpleLoginUI.ViewModels.Startup
+﻿namespace SimpleLoginUI.ViewModels.Startup
 {
     public class LoadingPageViewModel
     {

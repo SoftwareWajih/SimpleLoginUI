@@ -1,13 +1,4 @@
-﻿using SimpleLoginUI.Controls;
-using SimpleLoginUI.Views.Dashboard;
-using SimpleLoginUI.Views.Startup;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SimpleLoginUI.Models
+﻿namespace SimpleLoginUI.Models
 {
     public class AppConstant
     {

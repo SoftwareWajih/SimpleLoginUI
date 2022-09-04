@@ -1,12 +1,4 @@
-﻿using Microsoft.Toolkit.Mvvm.Input;
-using SimpleLoginUI.Views.Startup;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SimpleLoginUI.ViewModels
+﻿namespace SimpleLoginUI.ViewModels
 {
     public partial class AppShellViewModel : BaseViewModel
     {

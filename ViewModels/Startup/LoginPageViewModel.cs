@@ -1,16 +1,4 @@
-﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
-using Microsoft.Toolkit.Mvvm.Input;
-using Newtonsoft.Json;
-using SimpleLoginUI.Controls;
-using SimpleLoginUI.Models;
-using SimpleLoginUI.Views.Dashboard;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SimpleLoginUI.ViewModels.Startup
+﻿namespace SimpleLoginUI.ViewModels.Startup
 {
     public partial class LoginPageViewModel : BaseViewModel
     {
