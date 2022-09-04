@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimpleLoginUI.Views.Dashboard.PostingListPage"
+             xmlns:models="clr-namespace:SimpleLoginUI.Models"
+             xmlns:searchHandlers="clr-namespace:SimpleLoginUI.SearchHandlers"
+             xmlns:viewModels="clr-namespace:SimpleLoginUI.ViewModels.Dashboard"
+             x:DataType="viewModels:PostingListPageViewModel"
+             Title="Posting List Page">
+
+    <Shell.SearchHandler>
+        <searchHandlers:PostingSearchHandler
+            Placeholder="Search"
+            ShowsResults="True"
+            QueryIcon="search"
+            ClearIcon="clear"
+            NavigationRoute="AddUpdatePostingDetail"
+            Postings="{x:Static viewModels:PostingListPageViewModel.PostingListForSearch}">
+            <searchHandlers:PostingSearchHandler.ItemTemplate>
+                <DataTemplate x:DataType="models:Posting">
+                    <Grid Margin="5" RowDefinitions="Auto" ColumnDefinitions="40,Auto">
+                        <Image Grid.Row="0" Grid.Column="0" Source="user" HeightRequest="35" WidthRequest="35" />
+                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding Pickup}" FontSize="18" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                    </Grid>
+                </DataTemplate>
+            </searchHandlers:PostingSearchHandler.ItemTemplate>
+        </searchHandlers:PostingSearchHandler>
+    </Shell.SearchHandler>
+
+    <StackLayout Margin="10">
+        <Label Style="{StaticResource MediumLabel}"  Text="Postings" />
+        <Button Text="Add Post" Command="{Binding AddUpdatePostingCommand}" HorizontalOptions="EndAndExpand" />
+
+        <CollectionView ItemsSource="{Binding Postings}" >
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Posting">
+                    <Frame Margin="10" Padding="10">
+                        <StackLayout >
+                            <HorizontalStackLayout Spacing="10">
+                                <Label Text="{Binding Pickup}" FontSize="18" FontAttributes="Bold" />
+                                <Label Text="{Binding Dropoff}" FontSize="18" FontAttributes="Bold" />
+                            </HorizontalStackLayout>
+                            <Label Text="{Binding PostingType}" />
+                            <Label Text="{Binding LoadType}" />
+                        </StackLayout>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewModels:PostingListPageViewModel}},Path=DisplayActionCommand}"
+                                                  CommandParameter="{Binding .}" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>

@@ -126,6 +126,12 @@
                                     Title = "Students",
                                     ContentTemplate = new DataTemplate(typeof(StudentListPage)),
                                 },
+                                new ShellContent
+                                {
+                                    Icon = Icons.Posting,
+                                    Title = "Posting",
+                                    ContentTemplate = new DataTemplate(typeof(PostingListPage)),
+                                },
                    }
                 };
 

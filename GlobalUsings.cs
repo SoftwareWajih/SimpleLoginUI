@@ -15,3 +15,5 @@ global using SQLite;
 global using SimpleLoginUI.Services;
 global using System.Collections.ObjectModel;
 global using SimpleLoginUI.ViewModels.Dashboard;
+global using System.ComponentModel;
+global using System.Runtime.CompilerServices;

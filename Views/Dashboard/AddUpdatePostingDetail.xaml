@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimpleLoginUI.Views.Dashboard.AddUpdatePostingDetail"
+             xmlns:local="clr-namespace:SimpleLoginUI"
+             Title="Add / Update Posting Details">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="TextColor" Value="SlateGray" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <StackLayout Margin="10" Spacing="15">
+        <VerticalStackLayout>
+            <Label Text="First Name"  />
+            <Entry Text="{Binding PostingDetail.Pickup}" Placeholder="Pickup" />
+            <BoxView HeightRequest="0.8" Color="Gray" />
+        </VerticalStackLayout>
+
+
+        <VerticalStackLayout>
+            <Label Text="Last Name" />
+            <Entry  Text="{Binding PostingDetail.Dropoff}" Placeholder="Dropoff" />
+            <BoxView HeightRequest="0.8" Color="Gray" />
+        </VerticalStackLayout>
+        
+        <VerticalStackLayout>
+            <Label Text="Posting Type" />
+            <Picker x:Name="PostingDDL" Title="Select Posting Type" 
+                    ItemsSource="{Binding PostingTypePickers}"
+                    ItemDisplayBinding="{Binding PostingTypeName}"
+                    SelectedItem="{Binding SelectedTypePicer}" >
+
+            </Picker>
+            <BoxView HeightRequest="0.8" Color="Gray" />
+        </VerticalStackLayout>
+
+        <VerticalStackLayout>
+            <Label Text="Load Type" />
+            <Picker x:Name="LoadDDL" Title="Select Load Type" 
+                    ItemsSource="{Binding LoadPicker}"
+                    ItemDisplayBinding="{Binding LoadName}"
+                    SelectedItem="{Binding SelectedLoad}" >
+
+            </Picker>
+            <BoxView HeightRequest="0.8" Color="Gray" />
+        </VerticalStackLayout>
+
+
+        <Button Text="Save" Command="{Binding AddUpdatePostingCommand}"/>
+    </StackLayout>
+</ContentPage>
