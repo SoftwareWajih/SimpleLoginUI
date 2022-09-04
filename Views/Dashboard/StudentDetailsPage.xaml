@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimpleLoginUI.Views.Dashboard.StudentDetailsPage"
+             Title="Student Details Page">
+    <ScrollView BackgroundColor="{AppThemeBinding Light={StaticResource LightBackground}, Dark={StaticResource DarkBackground}}">
+        <VerticalStackLayout>
+            <VerticalStackLayout Padding="10" Spacing="10">
+                <Label Style="{StaticResource MediumLabel}" Text="{Binding StudentDetail.FirstName}" />
+                <Label Style="{StaticResource MediumLabel}" Text="{Binding StudentDetail.LastName}" />
+                <Label Style="{StaticResource MediumLabel}" Text="{Binding StudentDetail.Email}" />
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

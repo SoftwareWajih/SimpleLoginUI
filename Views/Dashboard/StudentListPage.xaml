@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimpleLoginUI.Views.Dashboard.StudentListPage"
+             xmlns:models="clr-namespace:SimpleLoginUI.Models"
+             xmlns:searchHandlers="clr-namespace:SimpleLoginUI.SearchHandlers"
+             xmlns:viewModels="clr-namespace:SimpleLoginUI.ViewModels.Dashboard"
+             x:DataType="viewModels:StudentListPageViewModel"
+             Title="StudentListPage">
+    <Shell.SearchHandler>
+        <searchHandlers:StudentSearchHandler 
+            Placeholder="Search Name"
+            ShowsResults="True"
+            QueryIcon="search"
+            ClearIcon="clear"
+            NavigationRoute="AddUpdateStudentDetail"
+            Students="{x:Static viewModels:StudentListPageViewModel.StudentsListForSearch}">
+            <searchHandlers:StudentSearchHandler.ItemTemplate>
+                <DataTemplate x:DataType="models:StudentModel">
+                    <Grid Margin="5" RowDefinitions="Auto" ColumnDefinitions="40,Auto">
+                        <Image Grid.Row="0" Grid.Column="0" Source="user" HeightRequest="35" WidthRequest="35" />
+                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding FullName}" FontSize="18" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                    </Grid>
+                </DataTemplate>
+            </searchHandlers:StudentSearchHandler.ItemTemplate>
+        </searchHandlers:StudentSearchHandler>
+    </Shell.SearchHandler>
+    <StackLayout Margin="10">
+        <Label Style="{StaticResource MediumLabel}"  Text="App Users List" />
+        <Button Text="Add Student" Command="{Binding AddUpdateStudentCommand}" HorizontalOptions="EndAndExpand" />
+
+        <CollectionView ItemsSource="{Binding Students}" >
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:StudentModel">
+                    <Frame Margin="10" Padding="10">
+                        <StackLayout >
+                            <HorizontalStackLayout Spacing="10">
+                                <Label Text="{Binding FirstName}" FontSize="18" FontAttributes="Bold" />
+                                <Label Text="{Binding LastName}" FontSize="18" FontAttributes="Bold" />
+                            </HorizontalStackLayout>
+                            <Label Text="{Binding Email}" />
+                        </StackLayout>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewModels:StudentListPageViewModel}},Path=DisplayActionCommand}"
+                                                  CommandParameter="{Binding .}" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>

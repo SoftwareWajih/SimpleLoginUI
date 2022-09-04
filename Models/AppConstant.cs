@@ -120,6 +120,12 @@
                                     Title = "Admin Profile",
                                     ContentTemplate = new DataTemplate(typeof(AdminDashboardPage)),
                                 },
+                                new ShellContent
+                                {
+                                    Icon = Icons.AboutUs,
+                                    Title = "Students",
+                                    ContentTemplate = new DataTemplate(typeof(StudentListPage)),
+                                },
                    }
                 };
 

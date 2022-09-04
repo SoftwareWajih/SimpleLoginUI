@@ -10,3 +10,8 @@ global using SimpleLoginUI.Models;
 global using Newtonsoft.Json;
 global using Microsoft.Toolkit.Mvvm.ComponentModel;
 global using Microsoft.Toolkit.Mvvm.Input;
+global using System.ComponentModel.DataAnnotations;
+global using SQLite;
+global using SimpleLoginUI.Services;
+global using System.Collections.ObjectModel;
+global using SimpleLoginUI.ViewModels.Dashboard;
