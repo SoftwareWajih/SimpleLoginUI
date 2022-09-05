@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimpleLoginUI.Views.Dashboard.BidListPage"
+             xmlns:models="clr-namespace:SimpleLoginUI.Models"
+             xmlns:searchHandlers="clr-namespace:SimpleLoginUI.SearchHandlers"
+             xmlns:viewModels="clr-namespace:SimpleLoginUI.ViewModels.Dashboard"
+             x:DataType="viewModels:BidListPageViewModel"
+             Title="Bid List Page">
+
+    <Shell.SearchHandler>
+        <searchHandlers:BidSearchHandler
+            Placeholder="Search"
+            ShowsResults="True"
+            QueryIcon="search"
+            ClearIcon="clear"
+            NavigationRoute="AddUpdateBidDetail"
+            Bids="{x:Static viewModels:BidListPageViewModel.BidListForSearch}">
+            <searchHandlers:BidSearchHandler.ItemTemplate>
+                <DataTemplate x:DataType="models:Bid">
+                    <Grid Margin="5" RowDefinitions="Auto" ColumnDefinitions="40,Auto">
+                        <Image Grid.Row="0" Grid.Column="0" Source="user" HeightRequest="35" WidthRequest="35" />
+                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding Cost}" FontSize="18" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                    </Grid>
+                </DataTemplate>
+            </searchHandlers:BidSearchHandler.ItemTemplate>
+        </searchHandlers:BidSearchHandler>
+    </Shell.SearchHandler>
+
+    <StackLayout Margin="10">
+        <Label Style="{StaticResource MediumLabel}"  Text="Bids" />
+        <Button Text="Add Post" Command="{Binding AddUpdateBidCommand}" HorizontalOptions="EndAndExpand" />
+
+        <CollectionView ItemsSource="{Binding Bids}" >
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Bid">
+                    <Frame Margin="10" Padding="10">
+                        <StackLayout >
+                            <HorizontalStackLayout Spacing="10">
+                                <Label Text="{Binding Cost}" FontSize="18" FontAttributes="Bold" />
+                                <Label Text="{Binding Status}" FontSize="18" FontAttributes="Bold" />
+                            </HorizontalStackLayout>
+                            <Label Text="{Binding Details}" />
+                            
+                        </StackLayout>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewModels:BidListPageViewModel}},Path=DisplayActionCommand}"
+                                                  CommandParameter="{Binding .}" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+
+</ContentPage>

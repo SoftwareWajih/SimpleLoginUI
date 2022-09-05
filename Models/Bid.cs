@@ -24,15 +24,17 @@ namespace SimpleLoginUI.Models
         #endregion
 
         #region Filters
-        public int? PostingId { get; set; }
-        public Posting Posting { get; set; }
+        public int PostingId { get; set; }
+        //public Posting Posting { get; set; }
         #endregion
 
         #region Basics
 
         public int Cost { get; set; }
 
-        public Status Status { get; set; }
+        public string Status { get; set; }
+
+        //public Status Status { get; set; }
 
         [Display(Name = "Additional Details")]
         [DisplayFormat(ConvertEmptyStringToNull = true, NullDisplayText = "None")]

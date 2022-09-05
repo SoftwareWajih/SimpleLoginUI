@@ -17,3 +17,7 @@ global using System.Collections.ObjectModel;
 global using SimpleLoginUI.ViewModels.Dashboard;
 global using System.ComponentModel;
 global using System.Runtime.CompilerServices;
+global using SimpleLoginUI.ViewModels;
+global using SimpleLoginUI.ViewModels.Startup;
+global using Microsoft.Maui.Platform;
+global using SimpleLoginUI.Handlers;

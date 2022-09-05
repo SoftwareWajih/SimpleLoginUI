@@ -1,8 +1,4 @@
-﻿using Microsoft.Maui.Platform;
-using SimpleLoginUI.Handlers;
-using SimpleLoginUI.Models;
-
-namespace SimpleLoginUI;
+﻿namespace SimpleLoginUI;
 
 public partial class App : Application
 {

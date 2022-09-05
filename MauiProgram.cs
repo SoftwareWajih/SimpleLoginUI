@@ -1,10 +1,4 @@
-﻿using SimpleLoginUI.ViewModels;
-using SimpleLoginUI.ViewModels.Dashboard;
-using SimpleLoginUI.ViewModels.Startup;
-using SimpleLoginUI.Views.Dashboard;
-using SimpleLoginUI.Views.Startup;
-
-namespace SimpleLoginUI;
+﻿namespace SimpleLoginUI;
 
 public static class MauiProgram
 {
@@ -44,6 +38,11 @@ public static class MauiProgram
         builder.Services.AddSingleton<PostingListPage>();
         builder.Services.AddTransient<AddUpdatePostingDetail>();
         builder.Services.AddTransient<PostingDetailsPage>();
+
+        // Bids
+        builder.Services.AddSingleton<BidListPage>();
+        builder.Services.AddTransient<AddUpdateBidDetail>();
+        builder.Services.AddTransient<BidDetailsPage>();
         #endregion
 
         #region View Models
@@ -62,6 +61,11 @@ public static class MauiProgram
         builder.Services.AddSingleton<PostingListPageViewModel>();
         builder.Services.AddTransient<AddUpdatePostingDetailViewModel>();
         builder.Services.AddTransient<PostingDetailsViewModel>();
+
+        // Bid
+        builder.Services.AddSingleton<BidListPageViewModel>();
+        builder.Services.AddTransient<AddUpdateBidDetailViewModel>();
+        builder.Services.AddTransient<BidDetailsViewModel>();
         #endregion
 
         #region Build

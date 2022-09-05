@@ -114,23 +114,23 @@
                                     Title = "Admin Dashboard",
                                     ContentTemplate = new DataTemplate(typeof(AdminDashboardPage)),
                                 },
-                                new ShellContent
-                                {
-                                    Icon = Icons.AboutUs,
-                                    Title = "Admin Profile",
-                                    ContentTemplate = new DataTemplate(typeof(AdminDashboardPage)),
-                                },
-                                new ShellContent
-                                {
-                                    Icon = Icons.AboutUs,
-                                    Title = "Students",
-                                    ContentTemplate = new DataTemplate(typeof(StudentListPage)),
-                                },
+                                //new ShellContent
+                                //{
+                                //    Icon = Icons.AboutUs,
+                                //    Title = "Admin Profile",
+                                //    ContentTemplate = new DataTemplate(typeof(AdminDashboardPage)),
+                                //},
                                 new ShellContent
                                 {
                                     Icon = Icons.Posting,
                                     Title = "Posting",
                                     ContentTemplate = new DataTemplate(typeof(PostingListPage)),
+                                },
+                                new ShellContent
+                                {
+                                    Icon = Icons.Posting,
+                                    Title = "Bid",
+                                    ContentTemplate = new DataTemplate(typeof(BidListPage)),
                                 },
                    }
                 };

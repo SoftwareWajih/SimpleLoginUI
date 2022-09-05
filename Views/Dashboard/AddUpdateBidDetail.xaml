@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SimpleLoginUI.Views.Dashboard.AddUpdatePostingDetail"
+             x:Class="SimpleLoginUI.Views.Dashboard.AddUpdateBidDetail"
              xmlns:local="clr-namespace:SimpleLoginUI"
-             Title="Add / Update Posting Details">
-    
+             Title="Add / Update Bid Details">
+
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="Label">
@@ -13,26 +13,32 @@
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-    
+
     <StackLayout Margin="10" Spacing="15">
         <VerticalStackLayout>
-            <Label Text="Pickup"  />
-            <Entry Text="{Binding PostingDetail.Pickup}" Placeholder="Pickup" />
+            <Label Text="Cost"  />
+            <Entry Text="{Binding BidDetail.Cost}" Placeholder="Pickup" />
             <BoxView HeightRequest="0.8" Color="Gray" />
         </VerticalStackLayout>
 
 
         <VerticalStackLayout>
-            <Label Text="Dropoff" />
-            <Entry  Text="{Binding PostingDetail.Dropoff}" Placeholder="Dropoff" />
+            <Label Text="Status" />
+            <Entry  Text="{Binding BidDetail.Status}" Placeholder="Dropoff" />
             <BoxView HeightRequest="0.8" Color="Gray" />
         </VerticalStackLayout>
-        
+
         <VerticalStackLayout>
-            <Label Text="Posting Type" />
-            <Picker x:Name="PostingDDL" Title="Select Posting Type" 
-                    ItemsSource="{Binding PostingTypePickers}"
-                    ItemDisplayBinding="{Binding PostingTypeName}"
+            <Label Text="Details" />
+            <Entry  Text="{Binding BidDetail.Details}" Placeholder="Dropoff" />
+            <BoxView HeightRequest="0.8" Color="Gray" />
+        </VerticalStackLayout>
+
+        <!--<VerticalStackLayout>
+            <Label Text="Bid Type" />
+            <Picker x:Name="BidDDL" Title="Select Bid Type" 
+                    ItemsSource="{Binding BidTypePickers}"
+                    ItemDisplayBinding="{Binding BidTypeName}"
                     SelectedItem="{Binding SelectedTypePicer}" >
 
             </Picker>
@@ -48,9 +54,10 @@
 
             </Picker>
             <BoxView HeightRequest="0.8" Color="Gray" />
-        </VerticalStackLayout>
+        </VerticalStackLayout>-->
 
 
-        <Button Text="Save" Command="{Binding AddUpdatePostingCommand}"/>
+        <Button Text="Save" Command="{Binding AddUpdateBidCommand}"/>
     </StackLayout>
+
 </ContentPage>

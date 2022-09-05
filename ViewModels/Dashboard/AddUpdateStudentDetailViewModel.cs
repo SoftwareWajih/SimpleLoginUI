@@ -44,8 +44,6 @@
                 });
             }
 
-
-
             if (response > 0)
             {
                 await Shell.Current.DisplayAlert("Student Info Saved", "Record Saved", "OK");

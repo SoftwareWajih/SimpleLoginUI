@@ -1,8 +1,4 @@
-﻿using SimpleLoginUI.Models;
-using SimpleLoginUI.ViewModels;
-using SimpleLoginUI.Views.Dashboard;
-
-namespace SimpleLoginUI;
+﻿namespace SimpleLoginUI;
 
 public partial class AppShell : Shell
 {
@@ -22,6 +18,13 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(PostingDetailsPage), typeof(PostingDetailsPage));
         Routing.RegisterRoute(nameof(AddUpdatePostingDetail), typeof(AddUpdatePostingDetail));
         #endregion
+
+        #region Bid
+        Routing.RegisterRoute(nameof(BidListPage), typeof(BidListPage));
+        Routing.RegisterRoute(nameof(BidDetailsPage), typeof(BidDetailsPage));
+        Routing.RegisterRoute(nameof(AddUpdateBidDetail), typeof(AddUpdateBidDetail));
+        #endregion
+
     }
 
 }
